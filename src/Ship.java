@@ -2,7 +2,7 @@ public abstract class Ship {
 
     protected final String name;
     private final int maxWeight;
-    private final int crew;
+    protected final int crew;
     protected static Shiptype type;
 
     public Ship(String name, int maxWeight, int crew, Shiptype type) {

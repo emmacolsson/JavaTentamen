@@ -2,8 +2,8 @@ public class PassengerShip extends Ship {
 
     protected final int maxPassengers;
     private int passengers;
-    private final int passengerWeight = 150;
-    private final int crewWeight = 100;
+    protected final int passengerWeight = 150;
+    protected final int crewWeight = 100;
 
     public PassengerShip(String name, int maxWeight, int crew, int maxPassengers) {
         super(name, maxWeight, crew, type);
