@@ -11,7 +11,16 @@ public class PassengerShip extends Ship {
         this.maxPassengers = maxPassengers;
     }
 
-    public void setPassengers(int passengers) {
+    public void setPassengers(int passengers) throws OverloadException {
+
+        if (passengers < 0) {
+            throw new OverloadException("Antal passagerare måste överstiga 0");
+        }
+
+        else if (passengers > maxPassengers) {
+            throw new OverloadException("Antalet passagerare överstiger max antal passagerare!");
+        }
+
         this.passengers = passengers;
     }
 
@@ -29,7 +38,8 @@ public class PassengerShip extends Ship {
 
     public String toString() {
 
-        return "Name: " + name + ", " + "Current weight: " + getCurrentWeight() + ", " + "Passengers: " + passengers;
+        return "Name: " + getName() + ", " + "Current weight: " + getCurrentWeight() + ", " + "Passengers: "
+                + getPassengers();
     }
 
 }

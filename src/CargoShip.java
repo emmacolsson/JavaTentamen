@@ -17,11 +17,20 @@ public class CargoShip extends Ship {
         for (Cargo cargo : cargos) {
             totalWeight += cargo.getWeight();
         }
-        return (crew * 100) + ((int) totalWeight);
+
+        return (crew * 100) + (int) totalWeight;
     }
 
-    public void addCargo(Cargo cargo) {
-        cargos.add(cargo);
+    public void addCargo(Cargo cargo) throws OverloadException {
+
+        int total = (int) cargo.getWeight() + getCurrentWeight();
+
+        if (total > maxWeight) {
+            throw new OverloadException("Maxvikten har överskridits!");
+        } else {
+            cargos.add(cargo);
+        }
+
     }
 
     public String toString() {

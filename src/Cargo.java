@@ -44,7 +44,7 @@ public class Cargo {
 
     public String toString() {
 
-        return "Name: " + name + ", " + "Weight: " + weight;
+        return "Name: " + getName() + ", " + "Weight: " + getWeight();
     }
 
 }
